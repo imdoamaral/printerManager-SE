@@ -1,0 +1,42 @@
+/** Links **/
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+/* Estilos da barra lateral */
+
+.wrapper {
+    display: flex;
+}
+
+aside {
+    height: 100vh;
+    width: 250px;
+    background: #E1E2E0;
+}
+
+aside .sidebar-header {
+    padding: 20px 70px;
+    background: #E1E2E0;
+}
+
+#mensagem {
+    padding: 10px;
+}
+
+aside ul.components {
+    padding: 20px 0;
+}
+
+aside ul li a {
+    display: block;
+    padding: 10px;
+}
+
+aside ul li.active>a {
+    color: #fff;
+    background: #343A40;
+}

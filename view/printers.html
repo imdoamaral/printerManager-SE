@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta tags obrigatórias -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css">
+    
+    <!-- CSS customizado -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/7b18f38e08.js" crossorigin="anonymous"></script>
+    
+    <title>Printer Manager - Impressoras</title>
+</head>
+
+<body>
+    <!-- Menu lateral, formulário e tabela -->
+    <div class="wrapper">
+        <aside>
+            <!-- Cabeçalho do menu lateral -->
+            <header>
+                <div class="sidebar-header">
+                    <a href="index.html">
+                        <img class="img-fluid" src="../assets/images/logo-croped.png" alt="Print Manager logo">
+                    </a>
+                </div>
+                <div id="mensagem">Bem vindo, <strong>Israel</strong></div>
+            </header>
+
+            <!-- Links do menu lateral -->
+            <nav>
+                <ul class="list-unstyled components">
+
+                    <!-- Dashboard -->
+                    <li>
+                        <a href="./index.html">Dashboard</a>
+                    </li>
+
+                    <!-- Impressoras -->
+                    <li class="active">
+                        <a href="./printers.html">Impressoras</a>
+                    </li>
+
+                    <!-- Toners -->
+                    <li>
+                        <a href="./toners.html">Toners</a>
+                    </li>
+
+                    <!-- Departamentos -->
+                    <li>
+                        <a href="./departments.html">Departamentos</a>
+                    </li>
+
+                    <!-- Proprietários -->
+                    <li>
+                        <a href="./proprietors.html">Proprietários</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </aside>
+
+        <!-- Formulário e tabela -->
+        <main class="container mt-3">
+            <!-- Campos do formulário -->
+            <form id="printer-form" class="row">
+                <div class="form-group col-md-4">
+                    <label for="serialNumber">Número de série</label>
+                    <input type="text" id="serialNumber" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="manufacturer">Fabricante</label>
+                    <input type="text" id="manufacturer" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="model">Modelo</label>
+                    <input type="text" id="model" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="tonerLastSwap">Última troca de Toner</label>
+                    <input type="date" id="tonerLastSwap" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="pageCountInstructions">Instruções contador</label>
+                    <input type="text" id="pageCountInstructions" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="overallCount">Contador geral</label>
+                    <input type="number" id="overallCount" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="departmentName">Departamento</label>
+                    <select name="" id="departmentName" class="form-select">
+                        <option selected value="">Escolha...</option>
+                        <!-- <option value=""></option> -->
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="proprietorName">Proprietário</label>
+                    <select name="" id="proprietorName" class="form-select">
+                        <option selected value="">Escolha...</option>
+                        <!-- <option value=""></option> -->
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="tonerModel">Modelo de toner</label>
+                    <select name="" id="tonerModel" class="form-select">
+                        <option selected value="">Escolha...</option>
+                        <!-- <option value=""></option> -->
+                    </select>
+                </div>
+                <div class="mt-3">
+                    <input type="submit" value="Adicionar Impressora" class="btn btn-primary">
+                </div>
+            </form>
+
+            <!-- Campos da tabela -->
+            <table class="table table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th>No. Série</th>
+                        <th>Fabricante</th>
+                        <th>Modelo</th>
+                        <th>Última troca de Toner</th>
+                        <th>Instruções Contador</th>
+                        <th>Contador Geral</th>
+                        <th>Departamento</th>
+                        <th>Proprietário</th>
+                        <th>Toners Disponíveis</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="printer-list"></tbody>
+            </table>
+
+        </main>
+
+    </div>
+
+    <!-- Modal para edição de formulário -->
+    <div class="modal" bis_skin_checked="1">
+        <div class="modal-dialog" role="document" bis_skin_checked="1">
+            <div class="modal-content" bis_skin_checked="1">
+                <!-- Cabeçalho do modal -->
+                <div class="modal-header" bis_skin_checked="1">
+                    <h5 class="modal-title">Editar impressora</h5>
+                    <button onclick="closeModal()" type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="modal-body" bis_skin_checked="1">
+                    <form id="modal-form">
+                        <!-- Campos do formulário -->
+                        <div class="form-group">
+                            <label for="serialNumber_modal">Número de série</label>
+                            <input type="text" id="serialNumber_modal" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="manufacturer_modal">Fabricante</label>
+                            <input type="text" id="manufacturer_modal" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="model_modal">Modelo</label>
+                            <input type="text" id="model_modal" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tonerLastSwap_modal">Última troca de Toner</label>
+                            <input type="date" id="tonerLastSwap_modal" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="pageCountInstructions_modal">Instruções para contagem de páginas</label>
+                            <input type="text" id="pageCountInstructions_modal" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="overallCount_modal">Contador geral</label>
+                            <input type="number" id="overallCount_modal" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="departmentName_modal">Departamento</label>
+                            <select name="" id="departmentName_modal" class="form-select">
+                                <option selected value="">Escolha...</option>
+                                <!-- <option value=""></option> -->
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="proprietorName_modal">Proprietário</label>
+                            <select name="" id="proprietorName_modal" class="form-select">
+                                <option selected value="">Escolha...</option>
+                                <!-- <option value=""></option> -->
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="tonerModel_modal">Modelo de toner</label>
+                            <select name="" id="tonerModel_modal" class="form-select">
+                                <option selected value="">Escolha...</option>
+                                <!-- <option value=""></option> -->
+                            </select>
+                        </div>
+                        <div class="d-grid mt-3">
+                            <input type="submit" value="Salvar Impressora" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript principal -->
+    <script type="module" src="../mainPrinter.js"></script>
+    
+    <!-- Javascript para fechar o Modal -->
+    <script>
+        function closeModal() {
+            document.querySelector('.modal').style.display = 'none'
+        }
+    </script>
+</body>
+
+</html>

@@ -43,20 +43,6 @@ class Department {
 
         Storage.setDepartments(departments);
     };
-
-    // ----- OTHER METHODS -----
-
-    // Not being used. Here for educational/query porpose.
-    static getId(department) {
-        const departments = this.read();
-
-        departments.forEach((item, index) => {
-            if(department.name === item.name) {
-                id = index;
-            }
-        });
-        return id;
-    };
 };
 
 export { Department }

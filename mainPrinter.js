@@ -34,26 +34,6 @@ toners.forEach((toner) => {
     );
 });
 
-// Carrega os departamentos (na janela de edição)
-const selectDepartmentNameModal = document.querySelector('#departmentName_modal');
-const departmentsModal = Department.read();
-
-departments.forEach((department) => {
-    selectDepartmentNameModal.add(
-        new Option(department.name)
-    );
-});
-
-// Carrega os toners (na janela de edição)
-const selectTonerQuantModal = document.querySelector('#tonerModel');
-const tonersModal = Toner.read();
-
-tonersModal.forEach((toner) => {
-    selectTonerQuantModal.add(
-        new Option(toner.model)
-    );
-});
-
 // ----- EVENTOS -----
 
 // Evento: Listar impressoras
@@ -75,8 +55,28 @@ document.querySelector('#printer-list').addEventListener('click', (event) => {
 
     // editar
     if (event.target.classList.contains('edit')) {
+        // Carrega os departamentos (na janela de edição)
+        const selectDepartmentNameModal = document.querySelector('#departmentName_modal');
+        const departmentsModal = Department.read();
+
+        departmentsModal.forEach((department) => {
+            selectDepartmentNameModal.add(
+                new Option(department.name)
+            );
+        });
+
+        // Carrega os toners (na janela de edição)
+        const selectTonerQuantModal = document.querySelector('#tonerModel');
+        const tonersModal = Toner.read();
+
+        tonersModal.forEach((toner) => {
+            selectTonerQuantModal.add(
+                new Option(toner.model)
+            );
+        });
+
         const serialNumberUI = event.target.parentElement.parentElement.firstElementChild.textContent;
-        
+
         Modal.open();
         Modal.fillFields(serialNumberUI);
 

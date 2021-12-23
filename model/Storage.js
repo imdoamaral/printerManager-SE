@@ -28,6 +28,13 @@ class Storage {
     };
 
     // Proprietário
+    static getProprietors() {
+        return JSON.parse(localStorage.getItem('proprietors')) || [];
+    };
+
+    static setProprietors(proprietors) {
+        localStorage.setItem('proprietors', JSON.stringify(proprietors));
+    };
 };
 
 export { Storage }

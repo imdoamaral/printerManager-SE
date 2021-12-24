@@ -45,7 +45,6 @@ proprietors.forEach((proprietor) => {
     );
 });
 
-
 // ----- EVENTOS -----
 
 // Evento: Listar impressoras
@@ -84,6 +83,16 @@ document.querySelector('#printer-list').addEventListener('click', (event) => {
         tonersModal.forEach((toner) => {
             selectTonerModelModal.add(
                 new Option(toner.model)
+            );
+        });
+
+        // Carrega os proprietários (na janela de edição)
+        const selectProprietorModal = document.querySelector('#proprietorName_modal');
+        const proprietors = Proprietor.read();
+
+        proprietors.forEach((proprietor) => {
+            selectProprietorModal.add(
+                new Option(proprietor.name)
             );
         });
 

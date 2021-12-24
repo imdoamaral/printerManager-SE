@@ -11,6 +11,7 @@ import { UI } from './controller/PrinterUIController.js';
 import { Form } from './controller/PrinterFormController.js';
 import { Department } from './model/Department.js';
 import { Toner } from './model/Toner.js';
+import { Proprietor } from './model/Proprietor.js';
 
 // ----- CARREGAMENTOS -----
 
@@ -35,6 +36,14 @@ toners.forEach((toner) => {
 });
 
 // Carrega os proprietários
+const selectProprietor = document.querySelector('#proprietorName');
+const proprietors = Proprietor.read();
+
+proprietors.forEach((proprietor) => {
+    selectProprietor.add(
+        new Option(proprietor.name)
+    );
+});
 
 
 // ----- EVENTOS -----

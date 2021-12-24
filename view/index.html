@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta tags obrigatórias -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css">
+
+    <!-- CSS customizado -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/7b18f38e08.js" crossorigin="anonymous"></script>
+
+    <title>Printer Manager - Dashboard</title>
+</head>
+
+<body>
+    <!-- Menu lateral, formulário e tabela -->
+    <div class="wrapper">
+        <aside>
+            <!-- Cabeçalho do menu lateral -->
+            <header>
+                <div class="sidebar-header">
+                    <a href="index.html">
+                        <img class="img-fluid" src="../assets/images/logo-croped.png" alt="Print Manager logo">
+                    </a>
+                </div>
+                <div id="mensagem">Bem vindo, <strong>Israel</strong></div>
+            </header>
+
+            <!-- Links do menu lateral -->
+            <nav>
+                <ul class="list-unstyled components">
+
+                    <!-- Dashboard -->
+                    <li class="active">
+                        <a href="./index.html">Dashboard</a>
+                    </li>
+
+                    <!-- Impressoras -->
+                    <li>
+                        <a href="./printers.html">Impressoras</a>
+                    </li>
+
+                    <!-- Toners -->
+                    <li>
+                        <a href="./toners.html">Toners</a>
+                    </li>
+
+                    <!-- Departamentos -->
+                    <li>
+                        <a href="./departments.html">Departamentos</a>
+                    </li>
+
+                    <!-- Proprietários -->
+                    <li>
+                        <a href="./proprietors.html">Proprietários</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </aside>
+
+        <!-- Painel -->
+        <main class="container mt-3">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="card text-white bg-primary mb-3" bis_skin_checked="1">
+                        <div class="card-header" bis_skin_checked="1">Header</div>
+                        <div class="card-body" bis_skin_checked="1">
+                            <h4 class="card-title">Primary card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card bg-secondary mb-3" bis_skin_checked="1">
+                        <div class="card-header" bis_skin_checked="1">Header</div>
+                        <div class="card-body" bis_skin_checked="1">
+                            <h4 class="card-title">Secondary card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-white bg-success mb-3" bis_skin_checked="1">
+                        <div class="card-header" bis_skin_checked="1">Header</div>
+                        <div class="card-body" bis_skin_checked="1">
+                            <h4 class="card-title">Success card title</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-md-4">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Cras justo odio
+                            <span class="badge bg-primary rounded-pill">14</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Dapibus ac facilisis in
+                            <span class="badge bg-primary rounded-pill">2</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Morbi leo risus
+                            <span class="badge bg-primary rounded-pill">1</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card" bis_skin_checked="1">
+                        <div class="card-body" bis_skin_checked="1">
+                            <h4 class="card-title">Card title</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Campos da tabela -->
+                <table class="table table-striped mt-5">
+                    <thead>
+                        <tr>
+                            <th>No. Série</th>
+                            <th>Fabricante</th>
+                            <th>Modelo</th>
+                            <th>Última troca de Toner</th>
+                            <th>Instruções Contador</th>
+                            <th>Contador Geral</th>
+                            <th>Departamento</th>
+                            <th>Proprietário</th>
+                            <th>Toners Disponíveis</th>
+                        </tr>
+                    </thead>
+                    <tbody id="printer-list"></tbody>
+                </table>
+
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Javascript principal -->
+    <script type="module" src="../mainPrinter.js"></script>
+</body>
+
+</html>

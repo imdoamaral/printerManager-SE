@@ -25,7 +25,7 @@ departments.forEach((department) => {
 });
 
 // Carrega os toners
-const selectTonerModel = document.querySelector('#tonerModel_modal');
+const selectTonerModel = document.querySelector('#tonerModel');
 const toners = Toner.read();
 
 toners.forEach((toner) => {
@@ -33,6 +33,9 @@ toners.forEach((toner) => {
         new Option(toner.model)
     );
 });
+
+// Carrega os proprietários
+
 
 // ----- EVENTOS -----
 
@@ -66,7 +69,7 @@ document.querySelector('#printer-list').addEventListener('click', (event) => {
         });
 
         // Carrega os toners (na janela de edição)
-        const selectTonerModelModal = document.querySelector('#tonerModel');
+        const selectTonerModelModal = document.querySelector('#tonerModel_modal');
         const tonersModal = Toner.read();
 
         tonersModal.forEach((toner) => {

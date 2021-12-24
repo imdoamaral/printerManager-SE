@@ -36,7 +36,7 @@ class Proprietor {
         const proprietors = Storage.getProprietors();
 
         proprietors.forEach((proprietor, index) => {
-            if(proprietor.id === receivedId) {
+            if(proprietor.id == receivedId) {
                 proprietors.splice(index, 1);
             }
         });

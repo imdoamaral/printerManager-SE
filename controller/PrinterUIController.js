@@ -44,11 +44,8 @@ class UI {
             }
         });
 
-        // UX = mensagens bonitinhas
-        if(tonerQuant === undefined || tonerQuant === 0) {
-            tonerQuant = "Nenhum :(";
-        }
-
+        // UX = melhorando a experiência do usuário com caracteres intuitivos
+        if(tonerQuant === undefined) tonerQuant = 0;
         if(printer.tonerLastSwap === '') printer.tonerLastSwap = '?';
         if(printer.pageCountInstructions === '') printer.pageCountInstructions = '?';
         if(printer.overallCount === '') printer.overallCount = 0;

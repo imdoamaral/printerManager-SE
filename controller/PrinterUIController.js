@@ -33,7 +33,7 @@ class UI {
 
         const row = document.createElement('tr');
 
-        // Obtém a QUANTIDADE de toners de acordo com 'printer.model'
+        // Obtém a quantidade de toners disponíveis para dada impressora
         let tonerQuant;
 
         const toners = Toner.read();

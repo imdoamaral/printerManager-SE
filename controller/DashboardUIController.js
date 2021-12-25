@@ -1,8 +1,3 @@
-// Total de impressoras cadastradas
-// Total de impressoras disponível
-// Total de impressoras em uso
-// Mostrar as impressoras disponíveis - impressoras sem proprietário
-
 import { Printer } from '../model/Printer.js';
 import { Toner } from '../model/Toner.js';
 
@@ -15,7 +10,7 @@ class UI {
     static addPrinters(printer) {
         const list = document.querySelector('#printer-list');
 
-        const row = document.createElement('tr'); // tr = table row = linha da tabela
+        const row = document.createElement('tr');
 
         // Obtém a quantidade de toners disponíveis para dada impressora
         let tonerQuant;

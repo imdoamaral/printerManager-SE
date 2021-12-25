@@ -33,10 +33,6 @@ class Form {
             if(isValid) {
                 const { model, quant } = this.getValues();
 
-                // id = posiçao do toner no array
-                // [toner0, toner1, toner2, ...]
-                // 0, 1, 2 ...
-
                 const toners = Toner.read();
                 const id = toners.length;
 

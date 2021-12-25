@@ -31,9 +31,6 @@ class UI {
 
         const row = document.createElement('tr');
 
-        // const id = Department.getId(department);
-        // department.id = id;
-
         row.innerHTML = `
             <td>${department.id}</td>
             <td>${department.name}</td>

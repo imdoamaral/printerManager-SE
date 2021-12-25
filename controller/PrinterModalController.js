@@ -95,10 +95,6 @@ class Modal {
             alert(error.message);
         }
     };
-
-    // Toner
-
-    // Proprietário
 };
 
 export { Modal }

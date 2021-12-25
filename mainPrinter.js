@@ -1,10 +1,3 @@
-/**
- * Aplicação Javascript + persistência dos dados no localStorage para um sistema de controle de Impressoras e Toners. 
- * Trabalho prático da disciplina de Engenharia de Software I (UFOP).
- */
-
-// ----- IMPORTAÇÃO DOS MÓDULOS -----
-
 import { Printer } from './model/Printer.js';
 import { Modal } from './controller/PrinterModalController.js';
 import { UI } from './controller/PrinterUIController.js';

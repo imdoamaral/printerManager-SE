@@ -1,5 +1,5 @@
 <img src="./assets/images/dashboard.png">
 
 ### Como abrir o projeto
-1. Vá em `code -> Download ZIP`
-2. Abra o arquivo `/view/index.html`
+1. Aqui mesmo nessa página, vá em `code -> Download ZIP`
+2. Após extrair os arquivos, abra o documento `/view/index.html`
